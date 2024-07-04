@@ -1,12 +1,9 @@
-<a href="https://github.com/filipeleonelbatista/finances-web/blob/master/README.md" target="_blank">
+<a href="https://github.com/filipeleonelbatista/spring-boot-api-experimental/blob/master/README.md" target="_blank">
   <img src="https://raw.githubusercontent.com/filipeleonelbatista/filipeleonelbatista/master/assets/brasil_bandeira.png" width="28px" />
   Version in Brasilian Portuguese
 </a>
 </br>
 </br>
-
-
-<img width="100%" src=".github/3.png">
 
 # Index
 
@@ -16,56 +13,28 @@
 
 ## 🔖&nbsp; About
 
-Application to manage my family's finances. With this app, I manage account inflows and outflows, control household product inventory, and track car mileage to monitor fuel costs. For accounts, there's an integration with OpenAI to generate analyses based on user-entered data.
-
-[Website Link](https://minhasfinancas.vercel.app/)
-[Google Play App Link](https://play.google.com/store/apps/details?id=com.finances)
+API to study Spring Boot using MySQL and JPA for authentication.
 
 ## Objective
 
-I created this app to help my family better manage personal finances. Based on Rocketseat's DevFinances, I used the acquired knowledge to develop and expand my skills with AI and Tailwind among other technologies used. I had a total of 100 downloads on the Google Play store and about 10 users accessing this app monthly. The project is still in development to be monetized. This is the final version for my portfolio.
-
-I talk more about it [IN THIS POST](https://www.linkedin.com/posts/filipeleonelbatista_ia-ai-inteligenciaartificial-activity-7085289369468571648-43Bp?utm_source=share&utm_medium=member_desktop) on my LinkedIn.
+Testing more about JAVA and how to create more resilient microservices with SPRING BOOT, I took a course that helped me understand how to do everything from installation and environment configuration to using the MYSQL database and JPA validation.
 
 ---
 ## Technologies
 
 This project was developed with the following main technologies:
 
-- [React JS](https://legacy.reactjs.org/docs/getting-started.html)
-- [TailwindCSS](https://tailwindcss.com/)
-- [Typescript](https://www.typescriptlang.org/)
-- [Apex Charts](https://apexcharts.com/docs/installation/)
-- [React Native](https://facebook.github.io/react-native/)
-- [Expo](https://expo.io/)
-- [WatermelonDB](https://github.com/Nozbe/WatermelonDB)
-- [Native Base](https://nativebase.io/)
-- [React Native Charts kit](https://www.npmjs.com/package/react-native-chart-kit)
+- [Java](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+- [Spring Boot](https://start.spring.io/)
+- [MySQL](https://dev.mysql.com/downloads/)
 
 and more...
 
 ---
 ## Installation
 
-The project runs with [Node.js](https://nodejs.org/) v20+.
+The project runs with [Java](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) v17 or higher and [Spring Boot](https://start.spring.io/) 2.6.3.
 
-Instructions to install dependencies and start the project.
-
-### Web
-
-```sh
-cd finances-web
-npm i
-npx run dev
-```
-
-### Mobile
-
-You need to access this project [Repository](https://github.com/filipeleonelbatista/finances-app)
-
-## API da OpenAI
-
-Within the mobile app, you will need your API key to enter in settings to enable the artificial intelligence button.
 
 ---
 
