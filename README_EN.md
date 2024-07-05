@@ -19,6 +19,9 @@ API to study Spring Boot using MySQL and JPA for authentication.
 
 Testing more about JAVA and how to create more resilient microservices with SPRING BOOT, I took a course that helped me understand how to do everything from installation and environment configuration to using the MYSQL database and JPA validation.
 
+
+The Api is documentated in `<base_url>/swagger-ui/index.html`
+
 ---
 ## Technologies
 
