@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.filipeleonelbatista.api.model.Mensagem;
-import br.com.filipeleonelbatista.api.model.Pessoa;
+import br.com.filipeleonelbatista.api.model.Message;
+import br.com.filipeleonelbatista.api.model.Person;
 import br.com.filipeleonelbatista.api.servico.Servico;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -21,7 +21,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
-@Tag(name = "CRUD Pessoas", description = "This controller manages operations with the people(Pessoas) table.")
+@Tag(name = "CRUD Persons", description = "This controller manages operations with the people(Persons) table.")
 public class Controller {
 
     @Autowired
@@ -31,71 +31,71 @@ public class Controller {
     @Operation(summary = "Route responsible for registering people")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Person successfully registered", content = {
-                    @Content(mediaType = "application/json", schema = @Schema(implementation = Pessoa.class))
+                    @Content(mediaType = "application/json", schema = @Schema(implementation = Person.class))
             }),
 
             @ApiResponse(responseCode = "400", description = "Invalid Data", content = {
-                    @Content(mediaType = "application/json", schema = @Schema(implementation = Mensagem.class))
+                    @Content(mediaType = "application/json", schema = @Schema(implementation = Message.class))
             })
     })
-    public ResponseEntity<?> cadastrar(@RequestBody Pessoa obj) {
-        return servico.cadastrar(obj);
+    public ResponseEntity<?> register(@RequestBody Person obj) {
+        return servico.register(obj);
     }
 
     @GetMapping("/api/list")
     @Operation(summary = "Route responsible for listing people")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Ok", content = {
-                    @Content(mediaType = "application/json", schema = @Schema(implementation = Pessoa.class))
+                    @Content(mediaType = "application/json", schema = @Schema(implementation = Person.class))
             })
     })
-    public ResponseEntity<?> selecionar() {
-        return servico.selecionar();
+    public ResponseEntity<?> select() {
+        return servico.select();
     }
 
-    @GetMapping("/api/select/{codigo}")
+    @GetMapping("/api/select/{id}")
     @Operation(summary = "Route responsible for listing a specific person by Code")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Ok", content = {
-                    @Content(mediaType = "application/json", schema = @Schema(implementation = Pessoa.class))
+                    @Content(mediaType = "application/json", schema = @Schema(implementation = Person.class))
             }),
 
             @ApiResponse(responseCode = "400", description = "Invalid Data or not founded", content = {
-                    @Content(mediaType = "application/json", schema = @Schema(implementation = Mensagem.class))
+                    @Content(mediaType = "application/json", schema = @Schema(implementation = Message.class))
             })
     })
-    public ResponseEntity<?> selecionarPeloCodigo(@PathVariable int codigo) {
-        return servico.selecionarPeloCodigo(codigo);
+    public ResponseEntity<?> selectById(@PathVariable int id) {
+        return servico.selectById(id);
     }
 
     @PutMapping("/api/update")
     @Operation(summary = "Route responsible for updating data for a specific person")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Ok", content = {
-                    @Content(mediaType = "application/json", schema = @Schema(implementation = Pessoa.class))
+                    @Content(mediaType = "application/json", schema = @Schema(implementation = Person.class))
             }),
 
             @ApiResponse(responseCode = "400", description = "Invalid Data or not founded", content = {
-                    @Content(mediaType = "application/json", schema = @Schema(implementation = Mensagem.class))
+                    @Content(mediaType = "application/json", schema = @Schema(implementation = Message.class))
             })
     })
-    public ResponseEntity<?> editar(@RequestBody Pessoa obj) {
-        return servico.editar(obj);
+    public ResponseEntity<?> update(@RequestBody Person obj) {
+        return servico.update(obj);
     }
 
-    @DeleteMapping("/api/delete/{codigo}")
+    @DeleteMapping("/api/delete/{id}")
     @Operation(summary = "Route responsible for removing a specific person by Code")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Ok", content = {
-                    @Content(mediaType = "application/json", schema = @Schema(implementation = Pessoa.class))
+                    @Content(mediaType = "application/json", schema = @Schema(implementation = Person.class))
             }),
 
-            @ApiResponse(responseCode = "400", description = "Invalid Data ou Pessoa não encontrada", content = {
-                    @Content(mediaType = "application/json", schema = @Schema(implementation = Mensagem.class))
+            @ApiResponse(responseCode = "400", description = "Invalid Data ou Person não encontrada", content = {
+                    @Content(mediaType = "application/json", schema = @Schema(implementation = Message.class))
             })
     })
-    public ResponseEntity<?> remover(@PathVariable int codigo) {
-        return servico.remover(codigo);
+    public ResponseEntity<?> delete(@PathVariable int id) {
+        return servico.delete(id);
     }
 
 }

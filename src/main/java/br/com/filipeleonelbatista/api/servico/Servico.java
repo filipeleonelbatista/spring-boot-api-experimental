@@ -5,67 +5,67 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import br.com.filipeleonelbatista.api.model.Mensagem;
-import br.com.filipeleonelbatista.api.model.Pessoa;
-import br.com.filipeleonelbatista.api.repositorio.Repositorio;
+import br.com.filipeleonelbatista.api.model.Message;
+import br.com.filipeleonelbatista.api.model.Person;
+import br.com.filipeleonelbatista.api.repo.Repo;
 
 @Service
 public class Servico {
   @Autowired
-  private Mensagem mensagem;
+  private Message message;
 
   @Autowired
-  private Repositorio repo;
+  private Repo repo;
 
-  public ResponseEntity<?> cadastrar(Pessoa obj) {
-    if (obj.getNome().equals("")) {
-      mensagem.setMensagem("Name needs to be filled in");
-      return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
-    } else if (obj.getIdade() < 0) {
-      mensagem.setMensagem("Enter a valid age");
-      return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
+  public ResponseEntity<?> register(Person obj) {
+    if (obj.getName().equals("")) {
+      message.setMessage("Name needs to be filled in");
+      return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
+    } else if (obj.getAge() < 0) {
+      message.setMessage("Enter a valid age");
+      return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
     } else {
       return new ResponseEntity<>(repo.save(obj), HttpStatus.CREATED);
     }
   }
 
-  public ResponseEntity<?> selecionar() {
+  public ResponseEntity<?> select() {
     return new ResponseEntity<>(repo.findAll(), HttpStatus.OK);
   }
 
-  public ResponseEntity<?> selecionarPeloCodigo(int codigo) {
-    if (repo.countByCodigo(codigo) == 0) {
-      mensagem.setMensagem("No person found");
-      return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
+  public ResponseEntity<?> selectById(int id) {
+    if (repo.countById(id) == 0) {
+      message.setMessage("No person found");
+      return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
     } else {
-      return new ResponseEntity<>(repo.findByCodigo(codigo), HttpStatus.OK);
+      return new ResponseEntity<>(repo.findById(id), HttpStatus.OK);
     }
   }
 
-  public ResponseEntity<?> editar(Pessoa obj) {
-    if (repo.countByCodigo(obj.getCodigo()) == 0) {
-      mensagem.setMensagem("The code provided does not exist.");
-      return new ResponseEntity<>(mensagem, HttpStatus.NOT_FOUND);
-    } else if (obj.getNome().equals("")) {
-      mensagem.setMensagem("You must provide a name.");
-      return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
-    } else if (obj.getIdade() < 0) {
-      mensagem.setMensagem("Enter a valid age");
-      return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
+  public ResponseEntity<?> update(Person obj) {
+    if (repo.countById(obj.getId()) == 0) {
+      message.setMessage("The code provided does not exist.");
+      return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
+    } else if (obj.getName().equals("")) {
+      message.setMessage("You must provide a name.");
+      return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
+    } else if (obj.getAge() < 0) {
+      message.setMessage("Enter a valid age");
+      return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
     } else {
       return new ResponseEntity<>(repo.save(obj), HttpStatus.OK);
     }
   }
 
-  public ResponseEntity<?> remover(int codigo) {
-    if (repo.countByCodigo(codigo) == 0) {
-      mensagem.setMensagem("No person found");
-      return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
+  public ResponseEntity<?> delete(int id) {
+    if (repo.countById(id) == 0) {
+      message.setMessage("No person found");
+      return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
     } else {
-      Pessoa obj = repo.findByCodigo(codigo);
+      Person obj = repo.findById(id);
       repo.delete(obj);
-      mensagem.setMensagem("Person removed successfully!");
-      return new ResponseEntity<>(mensagem, HttpStatus.OK);
+      message.setMessage("Person removed successfully!");
+      return new ResponseEntity<>(message, HttpStatus.OK);
     }
   }
 
