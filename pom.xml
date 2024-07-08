@@ -46,13 +46,6 @@
 			<version>2.6.3</version>
 		</dependency>
 
-
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.28</version>
-		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -77,11 +70,12 @@
 			<version>${swagger-version}</version>
 		</dependency>
 
-		
-	<dependency>  
-		<groupId>org.postgresql</groupId>  
-		<artifactId>postgresql</artifactId>  
-	</dependency>
+
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.3.1</version>
+		</dependency>
 
 	</dependencies>
 
