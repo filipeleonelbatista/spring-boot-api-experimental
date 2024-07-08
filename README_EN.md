@@ -5,17 +5,37 @@
 </br>
 </br>
 
-# Index
 
-- [About](#-about)
-- [Technologies](#Technologies)
-- [Installation](#Installation)
+<div align="center">
+<h1 align="center">
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg" width="100" />
+<br>spring-boot-api-experimental</h1>
+<h3>◦ Developed with the software and tools below.</h3>
 
-## 🔖&nbsp; About
+<p align="center">
+<img src="https://img.shields.io/badge/Docker-2496ED.svg?style&logo=Docker&logoColor=white" alt="Docker" />
+<img src="https://img.shields.io/badge/java-%23ED8B00.svg?style&logo=openjdk&logoColor=white" alt="java" />
+</p>
+<img src="https://img.shields.io/github/license/filipeleonelbatista/spring-boot-api-experimental?style&color=5D6D7E" alt="GitHub license" />
+<img src="https://img.shields.io/github/last-commit/filipeleonelbatista/spring-boot-api-experimental?style&color=5D6D7E" alt="git-last-commit" />
+<img src="https://img.shields.io/github/commit-activity/m/filipeleonelbatista/spring-boot-api-experimental?style&color=5D6D7E" alt="GitHub commit activity" />
+<img src="https://img.shields.io/github/languages/top/filipeleonelbatista/spring-boot-api-experimental?style&color=5D6D7E" alt="GitHub top language" />
+</div>
 
-API to study Spring Boot using MySQL and JPA for authentication.
+---
 
-## Objective
+## 📖 Table of Contents
+- [📖 Table of Contents](#-table-of-contents)
+- [📍 Overview](#-overview)
+- [📦 Features](#-features)
+- [📂 Repository Structure](#-repository-structure)
+- [🚀 Getting Started](#-getting-started)
+    - [🔧 Installation](#-installation)
+    - [🤖 Running spring-boot-api-experimental](#-running-spring-boot-api-experimental)
+
+---
+
+## 📍 Overview
 
 Testing more about JAVA and how to create more resilient microservices with SPRING BOOT, I took a course that helped me understand how to do everything from installation and environment configuration to using the MYSQL database and JPA validation.
 
@@ -23,21 +43,68 @@ Testing more about JAVA and how to create more resilient microservices with SPRI
 The Api is documentated in `<base_url>/swagger-ui/index.html`
 
 ---
-## Technologies
 
-This project was developed with the following main technologies:
+## 📦 Features
 
-- [Java](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
-- [Spring Boot](https://start.spring.io/)
-- [MySQL](https://dev.mysql.com/downloads/)
-
-and more...
+Create diferent persons.
 
 ---
-## Installation
 
-The project runs with [Java](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) v17 or higher and [Spring Boot](https://start.spring.io/) 2.6.3.
 
+## 📂 Repository Structure
+
+```sh
+└── spring-boot-api-experimental/
+    ├── .gitignore
+    ├── .mvn/
+    │   └── wrapper/
+    ├── Dockerfile
+    ├── mvnw
+    ├── mvnw.cmd
+    ├── pom.xml
+    └── src/
+        ├── main/
+        └── test/
+```
+
+---
+
+## 🚀 Getting Started
+
+***Dependencies***
+
+Please ensure you have the following dependencies installed on your system:
+
+`- ℹ️ Java 17`
+
+`- ℹ️ Springboot 2.6.3`
+
+`- ℹ️ maven`
+
+### 🔧 Installation
+
+1. Clone the spring-boot-api-experimental repository:
+```sh
+git clone https://github.com/filipeleonelbatista/spring-boot-api-experimental
+```
+
+2. Change to the project directory:
+```sh
+cd spring-boot-api-experimental
+```
+
+3. Install the dependencies:
+```sh
+mvn clean install
+```
+
+### 🤖 Running spring-boot-api-experimental
+
+```sh
+java -jar target/myapp.jar
+```
+
+[↑ Return](#Top)
 
 ---
 
