@@ -39,6 +39,9 @@ Testando mais sobre JAVA e como criar microsserviços mais resilientes com SPRIN
 
 A API está documentada em `<base_url>/swagger-ui/index.html`
 
+Hospedado em: https://spring-boot-api-experimental.onrender.com/
+
+Swagger: https://spring-boot-api-experimental.onrender.com/swagger-ui/index.html
 ---
 
 ## 📦 Funcionalidades

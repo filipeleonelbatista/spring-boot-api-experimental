@@ -10,9 +10,9 @@ import io.swagger.v3.oas.annotations.info.Info;
 @SpringBootApplication
 @OpenAPIDefinition(
 	info = @Info(
-		title = "Documentação API Pessoas V1.0",
+		title = "People API V1.0 Documentation",
 		version = "1.0",
-		description = "Documentando uma API básica de gerenciamento de pessoas",
+		description = "Documenting a basic people management API",
 		contact = @Contact(name = "Filipe Batista", email = "filipe.x2016@gmail.com", url = "https://filipeleonelbatista.dev.br")
 	)
 )

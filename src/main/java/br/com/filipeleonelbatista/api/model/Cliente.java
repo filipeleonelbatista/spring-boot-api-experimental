@@ -16,10 +16,10 @@ public class Cliente {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int codigo;
 
-  @NotEmpty(message = "Informe um nome")
+  @NotEmpty(message = "Enter a name")
   private String nome;
 
-  @Email(message = "Informe um e-mail válido")
+  @Email(message = "Enter a valid e-mail")
   private String email;
 
   public int getCodigo() {

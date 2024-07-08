@@ -21,20 +21,20 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
-@Tag(name = "CRUD Pessoas", description = "Este controlador gerencia operações com a tabela pessoas.")
+@Tag(name = "CRUD Pessoas", description = "This controller manages operations with the people(Pessoas) table.")
 public class Controller {
 
     @Autowired
     private Servico servico;
 
-    @PostMapping("/api/cadastrar")
-    @Operation(summary = "Rota responsável pelo cadastro de pessoas")
+    @PostMapping("/api/register")
+    @Operation(summary = "Route responsible for registering people")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "Pessoa cadastrada com sucesso", content = {
+            @ApiResponse(responseCode = "201", description = "Person successfully registered", content = {
                     @Content(mediaType = "application/json", schema = @Schema(implementation = Pessoa.class))
             }),
 
-            @ApiResponse(responseCode = "400", description = "Informação inválida", content = {
+            @ApiResponse(responseCode = "400", description = "Invalid Data", content = {
                     @Content(mediaType = "application/json", schema = @Schema(implementation = Mensagem.class))
             })
     })
@@ -42,8 +42,8 @@ public class Controller {
         return servico.cadastrar(obj);
     }
 
-    @GetMapping("/api/listar")
-    @Operation(summary = "Rota responsável pela listagem de pessoas")
+    @GetMapping("/api/list")
+    @Operation(summary = "Route responsible for listing people")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Ok", content = {
                     @Content(mediaType = "application/json", schema = @Schema(implementation = Pessoa.class))
@@ -53,14 +53,14 @@ public class Controller {
         return servico.selecionar();
     }
 
-    @GetMapping("/api/selecionar/{codigo}")
-    @Operation(summary = "Rota responsável pela listagem de uma pessoa especifica por Código")
+    @GetMapping("/api/select/{codigo}")
+    @Operation(summary = "Route responsible for listing a specific person by Code")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Ok", content = {
                     @Content(mediaType = "application/json", schema = @Schema(implementation = Pessoa.class))
             }),
 
-            @ApiResponse(responseCode = "400", description = "Informação inválida ou Pessoa não encontrada", content = {
+            @ApiResponse(responseCode = "400", description = "Invalid Data or not founded", content = {
                     @Content(mediaType = "application/json", schema = @Schema(implementation = Mensagem.class))
             })
     })
@@ -68,14 +68,14 @@ public class Controller {
         return servico.selecionarPeloCodigo(codigo);
     }
 
-    @PutMapping("/api/atualizar")
-    @Operation(summary = "Rota responsável pela atualização de dados de uma pessoa especifica")
+    @PutMapping("/api/update")
+    @Operation(summary = "Route responsible for updating data for a specific person")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Ok", content = {
                     @Content(mediaType = "application/json", schema = @Schema(implementation = Pessoa.class))
             }),
 
-            @ApiResponse(responseCode = "400", description = "Informação inválida ou Pessoa não encontrada", content = {
+            @ApiResponse(responseCode = "400", description = "Invalid Data or not founded", content = {
                     @Content(mediaType = "application/json", schema = @Schema(implementation = Mensagem.class))
             })
     })
@@ -83,14 +83,14 @@ public class Controller {
         return servico.editar(obj);
     }
 
-    @DeleteMapping("/api/deletar/{codigo}")
-    @Operation(summary = "Rota responsável por remover uma pessoa especifica por Código")
+    @DeleteMapping("/api/delete/{codigo}")
+    @Operation(summary = "Route responsible for removing a specific person by Code")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Ok", content = {
                     @Content(mediaType = "application/json", schema = @Schema(implementation = Pessoa.class))
             }),
 
-            @ApiResponse(responseCode = "400", description = "Informação inválida ou Pessoa não encontrada", content = {
+            @ApiResponse(responseCode = "400", description = "Invalid Data ou Pessoa não encontrada", content = {
                     @Content(mediaType = "application/json", schema = @Schema(implementation = Mensagem.class))
             })
     })

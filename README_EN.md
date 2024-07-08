@@ -42,6 +42,10 @@ Testing more about JAVA and how to create more resilient microservices with SPRI
 
 The Api is documentated in `<base_url>/swagger-ui/index.html`
 
+Deployed in: https://spring-boot-api-experimental.onrender.com/
+
+Swagger in: https://spring-boot-api-experimental.onrender.com/swagger-ui/index.html
+
 ---
 
 ## 📦 Features
